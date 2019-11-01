@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class CollectionExample {
     public static void main(String[] args){
@@ -28,6 +31,7 @@ public class CollectionExample {
             }
         });
 
+
         // b. with lambda 1st
         //Collections.sort(humans, (h1,h2)->h1.compareTo(h2));
         // c. with lambda 2nd
@@ -36,5 +40,10 @@ public class CollectionExample {
         // d. with lambda 3rd
         // humans.sort((h1,h2)->h1.compareTo(h2));
         System.out.println("After sorting:"+ humans.toString());
+        
+
+
+
+
     }
 }
