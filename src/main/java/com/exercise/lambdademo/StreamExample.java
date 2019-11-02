@@ -23,7 +23,7 @@ public class StreamExample {
                 .filter(numberFilter)
                 .map(Integer::parseInt)
                 .filter(m->m>600)
-                .sorted((s1, s2)-> s2-s1)
+                .sorted((s1, s2)-> s1-s2)
                 .collect(Collectors.toList());
         System.out.println("Before filtering: " + salaries.toString());
         System.out.println("After filtering: " + newSalaries.toString());

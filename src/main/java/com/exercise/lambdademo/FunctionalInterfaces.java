@@ -18,21 +18,23 @@ public class FunctionalInterfaces{
             }
 
         };
-        // Lambda 1st 
+    
+        //Lambda 1st 
+
         Consumer<String> consumer2 = (String s) ->{
              System.out.println(s);
         };
-        // Lambda 2nd
-        Consumer<String> consumer3 = s -> System.out.println(s);
+    //     // Lambda 2nd
+         Consumer<String> consumer3 = s -> System.out.println(s);
 
-        // Lambda 3rd
-        Consumer<String> consumer4 = FunctionalInterfaces::print;
+    //     // Lambda 3rd
+         Consumer<String> consumer4 = System.out::println;
 
-        consumer.accept("Hello Consumer");
-        consumer2.accept("Hello Consumer 2");;
-        consumer3.accept("Hello Consumer 3");
-        consumer4.accept("Hello Consumer 4");
-        Supplier<String> supplier = new Supplier(){
+         consumer.accept("Hello Consumer");
+         consumer2.accept("Hello Consumer 2");;
+         consumer3.accept("Hello Consumer 3");
+         consumer4.accept("Hello Consumer 4");
+         Supplier<String> supplier = new Supplier(){
 
             @Override
             public Object get() {
@@ -42,6 +44,9 @@ public class FunctionalInterfaces{
 
         };
         System.out.println(supplier.get());
+
+        Supplier<String> supplier2 = ()-> "Hello Supplier 2";
+        System.out.println(supplier2.get());
 
         Predicate<Integer> predicate = new Predicate<Integer>() {
 
@@ -53,8 +58,10 @@ public class FunctionalInterfaces{
             }
 
         };
-        System.out.println(predicate.test(8));
-    
+         System.out.println(predicate.test(8));
+
+         Predicate<Integer> predicate2 = s-> s%2==0;
+         System.out.println(predicate2.test(8));
         Function<String, String> function = new Function<String, String>(){
 
             @Override
@@ -65,11 +72,17 @@ public class FunctionalInterfaces{
             
         };
         System.out.println(function.apply("hello world"));
+        Function<String, String> function2 = s->s.toUpperCase();
+        System.out.println(function2.apply("hello function"));  
     }
+
+         
+
 
     static void print(String s){
         System.out.println(s);
     }
 
+          
     
 }
